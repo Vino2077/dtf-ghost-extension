@@ -1,0 +1,143 @@
+/* ─── DTF Ghost — встроенный удалённый комментарий ─────────────────────────── */
+
+.dtf-ghost-inline {
+  display: flex;
+  gap: 0;
+  margin: 4px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(180, 40, 40, 0.07);
+  border: 1px solid rgba(180, 40, 40, 0.2);
+}
+
+.dtf-ghost-inline-bar {
+  width: 3px;
+  background: #c0392b;
+  flex-shrink: 0;
+}
+
+.dtf-ghost-inline-content {
+  padding: 10px 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dtf-ghost-inline-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.dtf-ghost-inline-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #444;
+}
+
+.dtf-ghost-inline-avatar--empty {
+  background: #444;
+  display: block;
+}
+
+.dtf-ghost-inline-author {
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.dtf-ghost-inline-badge {
+  font-size: 11px;
+  background: rgba(180, 40, 40, 0.2);
+  color: #e57373;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.dtf-ghost-inline-time {
+  font-size: 11px;
+  opacity: 0.45;
+  margin-left: auto;
+}
+
+.dtf-ghost-inline-likes {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.dtf-ghost-inline-text {
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.85;
+  word-break: break-word;
+}
+
+/* ─── Запасной блок ─────────────────────────────────────────────────────────── */
+
+#dtf-ghost-block {
+  margin: 16px 0 24px;
+  border: 1.5px solid rgba(180, 40, 40, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: rgba(180, 40, 40, 0.05);
+}
+
+.dtf-ghost-block-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(180, 40, 40, 0.08);
+  border-bottom: 1px solid rgba(180, 40, 40, 0.2);
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.dtf-ghost-toggle {
+  margin-left: auto;
+  background: none;
+  border: 1px solid rgba(180, 40, 40, 0.3);
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 2px 9px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.dtf-ghost-toggle:hover { opacity: 1; }
+
+.dtf-ghost-body { padding: 4px 0; }
+
+.dtf-ghost-comment {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(180, 40, 40, 0.1);
+}
+.dtf-ghost-comment:last-child { border-bottom: none; }
+
+.dtf-ghost-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.dtf-ghost-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #444;
+  flex-shrink: 0;
+}
+
+.dtf-ghost-author { font-size: 13px; font-weight: 600; opacity: 0.85; }
+.dtf-ghost-meta { font-size: 11px; opacity: 0.45; margin-left: auto; }
+.dtf-ghost-text { font-size: 14px; line-height: 1.55; opacity: 0.8; word-break: break-word; }

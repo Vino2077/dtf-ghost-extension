@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "DTF Ghost — удалённые комментарии",
+  "version": "1.0.0",
+  "description": "Показывает удалённые комментарии на DTF.ru",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://dtf.ru/*",
+    "https://*.railway.app/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://dtf.ru/*"],
+      "js": ["content.js"],
+      "css": ["ghost.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  }
+}

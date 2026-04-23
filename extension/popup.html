@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DTF Ghost</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #16161f;
+      color: #d0d0e8;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .header-icon { font-size: 28px; }
+    .header h1 { font-size: 16px; font-weight: 700; color: #e8e8f8; }
+    .header p { font-size: 11px; color: #6868a0; margin-top: 2px; }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: #8888b0;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 9px 12px;
+      background: #22222e;
+      border: 1.5px solid #3a3a50;
+      border-radius: 8px;
+      color: #d0d0e8;
+      font-size: 13px;
+      outline: none;
+      transition: border 0.15s;
+    }
+    input:focus { border-color: #6868c0; }
+    input::placeholder { color: #44445a; }
+
+    button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px;
+      background: #4a4aaa;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button:hover { background: #5a5abb; }
+    button:active { background: #3a3a99; }
+
+    .status {
+      margin-top: 12px;
+      font-size: 12px;
+      text-align: center;
+      min-height: 18px;
+      color: #6868c0;
+    }
+    .status.ok { color: #60c080; }
+    .status.err { color: #c06060; }
+
+    .stats {
+      margin-top: 16px;
+      background: #1e1e2a;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      color: #6868a0;
+      display: none;
+    }
+    .stats.visible { display: block; }
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+    }
+    .stats-val { color: #a0a0d0; font-weight: 600; }
+
+    .hint {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #44445a;
+      line-height: 1.5;
+    }
+    .hint a { color: #6868a0; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="header-icon">👻</span>
+    <div>
+      <h1>DTF Ghost</h1>
+      <p>Удалённые комментарии</p>
+    </div>
+  </div>
+
+  <label for="serverUrl">URL вашего сервера</label>
+  <input
+    type="url"
+    id="serverUrl"
+    placeholder="https://your-app.railway.app"
+    autocomplete="off"
+    spellcheck="false"
+  >
+
+  <button id="saveBtn">Сохранить и проверить</button>
+  <div class="status" id="status"></div>
+
+  <div class="stats" id="stats">
+    <div class="stats-row">
+      <span>Постов в мониторинге</span>
+      <span class="stats-val" id="s-posts">—</span>
+    </div>
+    <div class="stats-row">
+      <span>Комментариев сохранено</span>
+      <span class="stats-val" id="s-total">—</span>
+    </div>
+    <div class="stats-row">
+      <span>Из них удалено</span>
+      <span class="stats-val" id="s-deleted">—</span>
+    </div>
+  </div>
+
+  <p class="hint">
+    Введите адрес своего сервера (Railway/VPS).<br>
+    Расширение будет запрашивать его при открытии каждого поста.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
